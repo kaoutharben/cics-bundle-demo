@@ -26,7 +26,7 @@ try {
 
 # Create a CICS bundle that packages your war for deployment into CICS
 
-1. Create a new module in the reactor called `demo-bundle` of type pom
+1. Create a new module in the `cics-bundle-demo` called `demo-bundle` of type `pom`
 
 2. Set the packaging type to `cics-bundle`
 

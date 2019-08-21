@@ -21,6 +21,6 @@
   </pluginRepositories>
   
   <modules>
-    <module>test-bundle-war</module>
+    <module>demo-war</module>
   </modules>
 </project>
