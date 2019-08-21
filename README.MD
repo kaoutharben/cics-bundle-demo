@@ -5,7 +5,7 @@
 <dependency>
   <groupId>com.ibm.cics</groupId>
   <artifactId>com.ibm.cics.server</artifactId>
-  <version>1.700.0</version>
+  <version>1.700.0-5.5-PH10453</version>
   <scope>provided</scope>
 </dependency>
 ``` 
