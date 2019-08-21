@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//import com.ibm.cics.server.InvalidRequestException;
-//import com.ibm.cics.server.Task;
-
 /**
  * Servlet implementation class SimpleServlet
  */
@@ -26,18 +23,5 @@ public class SimpleServlet extends HttpServlet {
 		response.setContentType("text/html");
 		response.getWriter().print("Hello world!");
     }
-    
-    /*
-     	2) Add sample JCICS code
-     	Task task = Task.getTask();
-    	
-    	try {
-			String userid = task.getUSERID();
-			response.setContentType("text/html");
-			response.getWriter().print("Hello!  I am " + userid);
-		} catch (InvalidRequestException e) {
-			throw new RuntimeException(e);
-		}
-     */
 
 }
