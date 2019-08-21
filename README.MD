@@ -63,7 +63,7 @@ import com.ibm.cics.server.Task;
 <dependencies>
   <dependency>
     <groupId>com.ibm.cics</groupId>
-    <artifactId>test-bundle-war</artifactId>
+    <artifactId>demo-war</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <type>war</type>
   </dependency>
