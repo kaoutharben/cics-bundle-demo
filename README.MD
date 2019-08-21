@@ -95,11 +95,13 @@ import com.ibm.cics.server.Task;
 
 2. Add authentication information for deploy endpoint to user `settings.xml`
 ```xml
-<server>
-  <id>cicsex61-https</id>
-  <username>USER</username>
-  <password>Passw0rd</password>
-</server>
+<servers>
+  <server>
+    <id>cicsex61-https</id>
+    <username>USER</username>
+    <password>Passw0rd</password>
+  </server>
+</servers>
 ```
 
 3. Add the bundle deploy goal to `demo-bundle`
@@ -131,7 +133,7 @@ import com.ibm.cics.server.Task;
 <csdgroup>BAR</csdgroup>
 ```
 
-7. run build on `cics-bundle-demo` reactor (with temp security config!)
+6. run build on `cics-bundle-demo` reactor (with temp security config!)
 
 ```
 mvn \
