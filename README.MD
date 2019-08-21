@@ -102,7 +102,7 @@ import com.ibm.cics.server.Task;
 </server>
 ```
 
-3. Add the bundle deploy goal to `test-bundle-bundle`
+3. Add the bundle deploy goal to `demo-bundle`
 ```xml
 <executions>
   <execution>
@@ -131,11 +131,16 @@ import com.ibm.cics.server.Task;
 <csdgroup>BAR</csdgroup>
 ```
 
-6. Select the bundle file you're going to deploy
-```xml
-<bundle>${project.build.directory}/${project.build.finalName}.zip</bundle>
+7. run build on `cics-bundle-demo` reactor (with temp security config!)
+
+```
+mvn \
+  -gs global-settings.xml \
+  -us user-settings.xml \
+  -Djavax.net.ssl.trustStore=cacerts \
+  -Djavax.net.ssl.trustStoreType=jks
+  -Djavax.net.ssl.trustStorePassword=changeit
+  clean install
 ```
 
-7. run mvn -gs global-settings.xml -us user-settings.xml clean install
-
-8. Visit [the servlet](http://cicsex61.hursley.ibm.com:29853/demo-war-0.0.1-SNAPSHOT) to see what you published
+8. Visit [the servlet](http://cicsex61.hursley.ibm.com:28953/demo-war-0.0.1-SNAPSHOT) to see what you published
