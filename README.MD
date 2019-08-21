@@ -71,6 +71,8 @@ import com.ibm.cics.server.Task;
 ```
 
 5. Set the default JVM server
+
+Add this xml snippet as a sibling to `<artifactId>cics-bundle-maven-plugin</artifactId>` within the `<plugin>` tag.
 ```xml
 <configuration>
   <defaultjvmserver>EYUCMCIJ</defaultjvmserver>
