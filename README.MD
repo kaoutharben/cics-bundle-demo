@@ -24,6 +24,14 @@ try {
 }
 ```
 
+3. Add imports for `Task` and `InvalidRequestException`	
+```java
+import com.ibm.cics.server.InvalidRequestException;
+import com.ibm.cics.server.Task;
+```
+
+4. Run mvn clean install on `demo-war` and observe that it compiles cleanly
+
 # Create a CICS bundle that packages your war for deployment into CICS
 
 1. Create a new module in the `cics-bundle-demo` called `demo-bundle` of type `pom`
