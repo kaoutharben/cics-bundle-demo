@@ -4,7 +4,7 @@
     
     <parent>
       <groupId>com.ibm.cics</groupId>
-      <artifactId>test-bundle</artifactId>
+      <artifactId>cics-bundle-demo</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </parent>
     
