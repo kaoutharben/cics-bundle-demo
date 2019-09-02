@@ -11,7 +11,7 @@
     </dependency>
     ``` 
 
-1. Add some code that uses JCICS to `demo-war/src/main/demo/SimpleServlet.java` at location [1]
+1. Add some code that uses JCICS to `demo-war/src/main/java/demo/SimpleServlet.java` at location [1]
 
     ```java
     Task task = Task.getTask();
