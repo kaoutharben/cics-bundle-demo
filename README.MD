@@ -128,12 +128,11 @@ The bundle directory of your bundle definition should be set as follows: <bundle
     ```
 
 1. run build on `cics-bundle-demo` reactor (with temp security config!)
-    In Eclipse: Launch the 
+    In Eclipse: Run the `cics-bundle-demo.launch` config.
 
+    On CLI run:
     ```
     mvn \
-      -gs global-settings.xml \
-      -us user-settings.xml \
       -Djavax.net.ssl.trustStore=cacerts \
       -Djavax.net.ssl.trustStoreType=jks \
       -Djavax.net.ssl.trustStorePassword=changeit \
