@@ -1,6 +1,6 @@
 # Using JCICS from Maven central
 
-1. Add JCICS dependency to `demo-war/pom.xml`.  See: [1]
+1. Add JCICS dependency to `demo-war/pom.xml` at location [1]
     
     ```xml
     <dependency>
@@ -11,7 +11,7 @@
     </dependency>
     ``` 
 
-1. Add some code that uses JCICS to `demo-war/src/main/demo/SimpleServlet.java`. See: [1]
+1. Add some code that uses JCICS to `demo-war/src/main/demo/SimpleServlet.java` at location [1]
 
     ```java
     Task task = Task.getTask();
@@ -40,7 +40,7 @@
 
 1. Create a new module in the `cics-bundle-demo` project called `demo-bundle`.  Set the of type `pom`
 
-1. Edit `demo-bundle/pom.xml` to tell Maven that we're building a CICS bundle.
+1. Tell Maven `demo-bundle` is building a CICS bundle.  In `demo-bundle/pom.xml`:
     Replace `<packaging>pom</packaging>` with this snippet.
 
     ```xml
@@ -49,21 +49,23 @@
     <build>
       <plugins>
 	      
-	<!-- [1] Add your dependency to the war project here -->
+        <!-- [1] Add your dependency to the war project here -->
       
         <plugin>
           <groupId>com.ibm.cics</groupId>
           <artifactId>cics-bundle-maven-plugin</artifactId>
           <version>0.0.2-SNAPSHOT</version>
           <extensions>true</extensions>
-	  <!-- [2] Set the default JVM server here -->
+          
+          <!-- [2] Set the default JVM server here -->
+          <!-- [3] Add your deployment configuration here -->
         </plugin>
     
       </plugins>
     </build>
     ```
 
-1. Add a dependency on your war project, to include it in the CICS bundle.  Replace [1].
+1. Add a dependency on your war project, to include it in the CICS bundle.  `demo-bundle/pom.xml` location [1].
 
     ```xml
     <dependencies>
@@ -76,12 +78,11 @@
     </dependencies>
     ```
 
-1. Tell the plugin which JVM server to set as the target for any Java part by default. Replace [2].
+1. Tell the plugin which JVM server to set as the target for any Java part by default. `demo-bundle/pom.xml` location [2].
 
     ```xml
     <configuration>
       <defaultjvmserver>EYUCMCIJ</defaultjvmserver>
-      <!-- [3] Add your deployment configuration here! -->
     </configuration>
     ```
 
@@ -107,11 +108,11 @@ The bundle directory of your bundle definition should be set as follows: <bundle
           <goal>deploy</goal>
         </goals>
         <phase>verify</phase>
-	<configuration>
+        <configuration>
           <url>https://winmvs28.hursley.ibm.com:28951</url>
           <username>${deploy-user}</username>
           <password>${deploy-password}</password>
-	  <!-- [4] Add deploy target location here -->
+          <!-- [4] Add deploy target location here -->
         </configuration>
       </execution>
     </executions>
