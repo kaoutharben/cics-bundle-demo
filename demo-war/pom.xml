@@ -27,7 +27,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- [1] Add the JCICS dependency here -->
       <dependency>
         <groupId>org.apache.geronimo.specs</groupId>
         <artifactId>geronimo-servlet_3.0_spec</artifactId>
@@ -37,6 +36,7 @@
   </dependencyManagement>
 
   <dependencies>
+    <!-- [1] Add the JCICS dependency here -->
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
       <artifactId>geronimo-servlet_3.0_spec</artifactId>
