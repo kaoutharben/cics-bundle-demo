@@ -44,12 +44,12 @@
     Replace `<packaging>pom</packaging>` with this snippet.
 
     ```xml
-    <packaging>cics-bundle</packaging> 
+    <packaging>cics-bundle</packaging>
+
+    <!-- [1] Add your dependency to the war project here -->
 
     <build>
       <plugins>
-	      
-        <!-- [1] Add your dependency to the war project here -->
       
         <plugin>
           <groupId>com.ibm.cics</groupId>
