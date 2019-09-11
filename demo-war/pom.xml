@@ -83,6 +83,31 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      
+      <plugin>
+        <groupId>com.ibm.cics</groupId>
+        <artifactId>cics-bundle-maven-plugin</artifactId>
+        <version>0.0.2-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>bundle-war</goal>
+              <goal>deploy</goal>
+            </goals>
+            <configuration>
+              <classifier>cics-bundle</classifier>
+              <jvmserver>EYUCMCIJ</jvmserver>
+              <url>https://winmvs28.hursley.ibm.com:28951</url>
+              <username>${deploy-user}</username>
+              <password>${deploy-password}</password>
+              <bunddef>DEMO2</bunddef>
+              <csdgroup>DEMO</csdgroup>
+              <cicsplex>CICSEX56</cicsplex>
+              <region>IYCWEMW2</region>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
