@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SimpleServlet")
 public class SimpleServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    
+    static final String TSQ_NAME = "DEMO";
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
