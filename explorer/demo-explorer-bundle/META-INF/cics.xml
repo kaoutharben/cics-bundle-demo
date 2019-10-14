@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<manifest xmlns="http://www.ibm.com/xmlns/prod/cics/bundle" id="demo-explorer-bundle" bundleMajorVer="0" bundleMinorVer="0" bundleMicroVer="1" bundleVersion="1" bundleRelease="0" build="IntB-201809142129">
+    <meta_directives>
+        <timestamp>2019-10-14T02:05:48.841+01:00</timestamp>
+    </meta_directives>
+    <define name="demo-explorer-war" type="http://www.ibm.com/xmlns/prod/cics/bundle/WARBUNDLE" path="demo-explorer-war.warbundle"/>
+</manifest>
