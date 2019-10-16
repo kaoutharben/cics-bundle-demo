@@ -32,6 +32,7 @@ public class SimpleServletFilter implements Filter {
 		tsq = new TSQ();
 		tsq.setName(SimpleServlet.TSQ_NAME);
 		tsq.setType(TSQType.MAIN);
+		purgeQueue(tsq);
 		
 		Faker faker = new Faker();
 		 
@@ -61,7 +62,16 @@ public class SimpleServletFilter implements Filter {
 		try {
 			tsq.delete();
 		} catch (CicsConditionException e) {
-			throw new RuntimeException(e);
+			//throw new RuntimeException(e);
+		}
+	}
+
+	private void purgeQueue(TSQ tsq){
+		try{
+			tsq.delete();
+		}catch(CicsConditionException cce){
+			//purging the queue will fail if the queue doesn't exist
+			//so ignore this exception
 		}
 	}
 
