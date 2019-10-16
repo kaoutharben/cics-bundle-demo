@@ -32,6 +32,7 @@ public class SimpleServletFilter implements Filter {
 		tsq = new TSQ();
 		tsq.setName(SimpleServlet.TSQ_NAME);
 		tsq.setType(TSQType.MAIN);
+		this.destroy();
 		
 		Faker faker = new Faker();
 		 
@@ -61,7 +62,7 @@ public class SimpleServletFilter implements Filter {
 		try {
 			tsq.delete();
 		} catch (CicsConditionException e) {
-			throw new RuntimeException(e);
+			//throw new RuntimeException(e);
 		}
 	}
 
