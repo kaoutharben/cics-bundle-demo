@@ -6,10 +6,8 @@
 <booleanAttribute key="M2_OFFLINE" value="false"/>
 <stringAttribute key="M2_PROFILES" value=""/>
 <listAttribute key="M2_PROPERTIES">
-<!--<listEntry value="deploy-user=${string_prompt:Deploy user ID}"/>
-<listEntry value="deploy-password=${password_prompt:Deploy password}"/>-->
-<listEntry value="deploy-user=yatesw"/>
-<listEntry value="deploy-password=sagep0rk"/>
+<listEntry value="deploy-user=${string_prompt:Deploy user ID}"/>
+<listEntry value="deploy-password=${password_prompt:Deploy password}"/>
 </listAttribute>
 <stringAttribute key="M2_RUNTIME" value="EMBEDDED"/>
 <booleanAttribute key="M2_SKIP_TESTS" value="false"/>
