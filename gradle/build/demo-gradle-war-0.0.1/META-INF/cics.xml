@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://www.ibm.com/xmlns/prod/cics/bundle" bundleMajorVer="0" bundleMicroVer="1" bundleMinorVer="0" bundleRelease="0" bundleVersion="1" id="demo-gradle-war">
+  <meta_directives>
+    <timestamp>2020-02-25T17:26:36.439Z</timestamp>
+  </meta_directives>
+  <define name="FILEDEFA" path="FILEDEFA.file" type="http://www.ibm.com/xmlns/prod/cics/bundle/FILE"/>
+  <define name="demo-gradle-war-0.0.1" path="demo-gradle-war-0.0.1.warbundle" type="http://www.ibm.com/xmlns/prod/cics/bundle/WARBUNDLE"/>
+</manifest>

@@ -1,0 +1,53 @@
+gradle wrapper --gradle-version 5.0 --distribution-type all
+
+build.gradle
+
+dependencies {
+    providedCompile 'com.ibm.cics:com.ibm.cics.server:1.700.0-5.5-PH10453'
+}
+
+plugins {
+    id 'com.ibm.cics.bundle' version '0.0.1'
+}
+
+dependencies {
+    cicsBundle files(war)
+}
+
+cicsBundle {
+    build {
+        defaultJVMServer = 'EYUCMCIJ'
+    }
+}
+
+src/main/resources/PROGDEF1.program
+<?xml version="1.0" encoding="UTF-8"?>
+<cicsdefinitionprogram xmlns="http://www.ibm.com/xmlns/prod/CICS/smw2int" description="Demo program definition" jvm="NO" name="PROGDEF1"/>
+
+cicsBundle {
+    deploy {
+        url      = 'https://cicsex56.hursley.ibm.com:28951'
+        cicsplex = 'CICSEX56'
+        region   = 'IYCWEMW2'
+        bunddef  = 'GRADLE'
+        csdgroup = 'DEMO2'
+    }
+}
+
+gradle-credentials-plugin
+plugins {
+    id 'nu.studer.credentials' version '2.1'
+}
+
+gradle addCredentials --key username --value someUser
+gradle addCredentials --key password --value somePassword
+
+cicsBundle {
+    deploy {
+        username = credentials.username
+        password = credentials.password
+        insecure = true
+    }
+}
+
+http://cicsex56.hursley.ibm.com:28953/standalone-war-1.0.0/

@@ -8,50 +8,19 @@
   <artifactId>demo-maven-war</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-
-  <pluginRepositories>
-    <!-- Configure Sonatype OSS Maven snapshots repository -->
-    <pluginRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </pluginRepository>
-  </pluginRepositories>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.apache.geronimo.specs</groupId>
-        <artifactId>geronimo-servlet_3.0_spec</artifactId>
-        <version>1.0</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+  
+  <properties>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>com.ibm.cics</groupId>
-      <artifactId>com.ibm.cics.server</artifactId>
-      <version>1.700.0-5.5-PH10453</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-servlet_3.0_spec</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>jsr250-api</artifactId>
-      <version>1.0</version>
-      <scope>provided</scope>
-    </dependency>
+  	<dependency>
+	  <groupId>javax.servlet</groupId>
+	  <artifactId>javax.servlet-api</artifactId>
+	  <version>3.1.0</version>
+	  <scope>provided</scope>
+  	</dependency>
     <dependency>
       <groupId>com.github.javafaker</groupId>
       <artifactId>javafaker</artifactId>
@@ -73,41 +42,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      
-      <plugin>
-        <groupId>com.ibm.cics</groupId>
-        <artifactId>cics-bundle-maven-plugin</artifactId>
-        <version>0.0.2-SNAPSHOT</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>bundle-war</goal>
-              <goal>deploy</goal>
-            </goals>
-            <configuration>
-              <classifier>cics-bundle</classifier>
-              <jvmserver>EYUCMCIJ</jvmserver>
-              <url>https://winmvs28.hursley.ibm.com:28951</url>
-              <username>${deploy-user}</username>
-              <password>${deploy-password}</password>
-              <bunddef>MAVEN</bunddef>
-              <csdgroup>DEMO2</csdgroup>
-              <cicsplex>CICSEX56</cicsplex>
-              <region>IYCWEMW2</region>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
   </build>
 </project>
 
